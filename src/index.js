@@ -4,11 +4,11 @@ import './index.css';
 import Profile from './profile';
 import TaskList from './task-list';
 import reportWebVitals from './reportWebVitals';
+import MainLayout from './main-layout';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Profile />
-    <TaskList />
+    <MainLayout />
   </React.StrictMode>,
   document.getElementById('root')
 );
