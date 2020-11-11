@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Profile from './profile';
-import Task from './task';
+import TaskList from './task-list';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <Profile />
-    <Task />
+    <TaskList />
   </React.StrictMode>,
   document.getElementById('root')
 );
