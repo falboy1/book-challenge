@@ -12,7 +12,7 @@ class MainLayout extends Component {
         return(
             <div className="container-fluid">
                 <div className="row">
-                    <Sidebar />
+                    <MainHeader />
                     <MainContent />
                 </div>
             </div>

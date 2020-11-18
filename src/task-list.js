@@ -15,6 +15,8 @@ class TaskList extends Component {
                             <Task />
                             <Task />
                             <Task />
+                            <Task />
+                            <Task />
                         </div>
                     </div>
                 </div>
