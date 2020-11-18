@@ -11,8 +11,8 @@ class MainLayout extends Component {
     render(){
         return(
             <div className="container-fluid">
+                <MainHeader />
                 <div className="row">
-                    <MainHeader />
                     <MainContent />
                 </div>
             </div>
