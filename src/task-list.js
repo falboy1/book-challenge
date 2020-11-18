@@ -5,19 +5,16 @@ import Task from './task';
 class TaskList extends Component {
     render(){
         return(
-            <div>
-                <h2 className="text-center my-4">参加中のチャレンジ</h2>
+            <div className="col-sm-8 col-md-8 col-lg-8 my-3 mx-auto">
                 <div className="container">
-                    <div className="card-deck">
-                        <div class="row">
-                            <Task />
-                            <Task />
-                            <Task />
-                            <Task />
-                            <Task />
-                            <Task />
-                            <Task />
-                        </div>
+                    <div class="colmn">
+                        <Task />
+                        <Task />
+                        <Task />
+                        <Task />
+                        <Task />
+                        <Task />
+                        <Task />
                     </div>
                 </div>
                 
