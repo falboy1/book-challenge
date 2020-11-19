@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Profile from './profile';
-import TaskList from './task-list';
 import reportWebVitals from './reportWebVitals';
-import MainLayout from './main-layout';
+import MainLayout from './components/main-layout';
 
 ReactDOM.render(
   <React.StrictMode>

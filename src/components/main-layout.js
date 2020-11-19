@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import Profile from './profile';
 import TaskList from './task-list';
-import './css/main.css';
 import MainHeader from './main-header';
-import Sidebar from './siderbar';
+import Sidebar from './sidebar';
 import MainContent from './main-content';
 
 

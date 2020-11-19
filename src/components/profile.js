@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import './css/profile.css';
 
 class Profile extends Component {
+
+    
     render(){
         return(
             <div className="profile-component">

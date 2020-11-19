@@ -7,6 +7,8 @@ class Task extends Component {
                 <div>
                     <h4 className="font-weight-bold text-success">毎月の一冊チャレンジ</h4>
                     <p>毎月の一冊としてみんなで同じ参考書を使って勉強しましょう！やる気ある方誰でも参加OKです！ReactやJavaScript初心者も歓迎。</p>
+                    <p>参加者 5人</p>
+                    <p>主催者 デクくん</p>
                     <p className="d-flex align-items-end">12/31まで</p>
                 </div>
                 <div className="m-4">
