@@ -1,38 +1,42 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
-class MainHeader extends Component {
-    render(){
-        return(
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Book!</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">トレンド</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">チャレンジ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">マイページ</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ログイン</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">会員登録</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        );
-    }
+const MainHeader = (props) => {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            withREAD
+          </Typography>
+          <Button color="inherit">ログイン</Button>
+          <Button color="inherit">会員登録</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
 
 export default MainHeader;

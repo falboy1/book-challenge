@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
-import Profile from './profile';
 import TaskList from './task-list';
-import TaskHeader from './task-header'
-import MainHeader from './main-header';
-import Sidebar from './sidebar';
-import Task from './task';
+import TaskHeader from './task-header';
+import Box from '@material-ui/core/Box'
 
 
 class MainContent extends Component {
     render(){
         return(
-            <div className="col-xs-8 container">
+            <div>
                 <TaskHeader />
                 <TaskList />
             </div>

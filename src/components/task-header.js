@@ -1,14 +1,23 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
+import {PrimaryButton} from './UIkit';
+import {TextBox} from './UIkit';
+import CreateIcon from '@material-ui/icons/Create';
+import '../css/style.css';
+import Box from '@material-ui/core/Box';
 
 class TaskHeader extends Component {
     render() {
         return (
-            <div className="mx-auto">
-                 <Button variant="contained" color="primary">
-                    Test
-                </Button>
-                <h3 className="text-center mt-5 mb-3">参加中のチャレンジ</h3>
+            <div>
+                <PrimaryButton
+                    label={'チャレンジを探す'}
+                    eIcon={<CreateIcon />}
+                />
+                <PrimaryButton
+                    label={'新しくチャレンジを作る'}
+                    eIcon={<CreateIcon />}
+                />
+                <h2 className="text-center">参加中のチャレンジ</h2>
             </div>
         );
     }

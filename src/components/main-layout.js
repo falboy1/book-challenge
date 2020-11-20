@@ -1,19 +1,15 @@
 import React, {Component} from 'react';
-import Profile from './profile';
-import TaskList from './task-list';
 import MainHeader from './main-header';
-import Sidebar from './sidebar';
 import MainContent from './main-content';
+import '../css/style.css';
 
 
 class MainLayout extends Component {
     render(){
         return(
-            <div className="container-fluid">
+            <div>
                 <MainHeader />
-                <div className="row">
-                    <MainContent />
-                </div>
+                <MainContent />
             </div>
         );
     }
