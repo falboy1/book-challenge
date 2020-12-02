@@ -2,12 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import MainLayout from './components/main-layout';
+import {Provider} from 'react-redux';
+import App from './App';
+import {createBrowserHistory} from 'history';
+import { ConnectedRouter } from 'connected-react-router';
+import createStore from './createStore';
+
+
+// historyのインスタンス
+const history = createBrowserHistory();
+
+// Storeの生成
+const store = createStore(history);
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <MainLayout />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>,
   document.getElementById('root')
 );
 
