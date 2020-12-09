@@ -16,7 +16,12 @@ const TextBox = (props) => {
 
     return (
         <form className={classes.root} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="aaa" variant="outlined" />
+            <TextField
+              id="outlined-basic"
+              label={props.label}
+              variant="outlined" 
+              onChange={props.onChange}
+            />
         </form>
     );
 }

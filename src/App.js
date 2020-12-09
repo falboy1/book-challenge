@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MainHeader from './components/main-header';
 import MainContent from './components/main-content';
-import {Home, SignIn, CreateTask} from './containers';
+import {Home, SignIn, CreateTask, SignUp, MyPage} from './containers';
 import {Switch, Route} from 'react-router';
 
 
@@ -10,11 +10,11 @@ class App extends Component {
         return(
             <React.Fragment>
                 <MainHeader />
-                <Switch>
-                    <Route path="/home" component={Home} />
-                    <Route path="/signin" component={SignIn} />
-                    <Route path="/task/create" component={CreateTask} />
-                </Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/login" component={SignIn} />
+                <Route path="/signup" component={SignUp} />
+                <Route path="/mypage" component={MyPage} />
+                <Route path="/task/create" component={CreateTask} />
             </React.Fragment>
         );
     }

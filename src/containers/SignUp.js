@@ -2,28 +2,29 @@ import React from 'react';
 import { makeStyles} from "@material-ui/core/styles";
 import {TextBox, PrimaryButton} from '../components/UIkit';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
+      '& > *': {
+        margin: theme.spacing(1),
+        width: '25ch',
+      },
     },
-  },
-}));
+  }));
 
 
-const SingIn = () => {
+const SignUp = () => {
     const classes = useStyles();
-
     return (
         <div>
             <form className={classes.root} noValidate autoComplete="off">
-                <TextBox label={"IDまたはメールアドレス"} />
+                <TextBox label={"メールアドレス"} />
+                <TextBox label={"ID"} />
                 <TextBox label={"パスワード"} />
-                <PrimaryButton label={"ログイン"} />
+                <PrimaryButton label={"登録"} />
             </form>
         </div>
     );
 }
 
-export default SingIn;
+export default SignUp;
