@@ -8,7 +8,7 @@ const Home = () => {
             <h1>ホーム画面</h1>
             <Link to="/task/search">チャレンジを探す</Link>
             <Link to="/task/create">チャレンジを作る</Link>
-            <Link to="/task">チャレンジ一覧</Link>
+            <Link to="/task/all">チャレンジ一覧</Link>
         </div>
     );
 };

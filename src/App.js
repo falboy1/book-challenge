@@ -17,7 +17,7 @@ class App extends Component {
                 <Route path="/mypage" component={MyPage} />
                 <Route path="/task/create" component={CreateTask} />
                 <Route path="/task/search" component={SearchPage} />
-                <Route path="/task" component={TaskPage} />
+                <Route path="/task/all" component={TaskPage} />
             </React.Fragment>
         );
     }

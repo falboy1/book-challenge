@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
-      width: '25ch',
     },
   },
 }));
@@ -21,6 +20,7 @@ const TextBox = (props) => {
               label={props.label}
               variant="outlined" 
               onChange={props.onChange}
+              fullWidth={props.fullWidth}
             />
         </form>
     );
