@@ -6,8 +6,9 @@ const Home = () => {
     return(
         <div>
             <h1>ホーム画面</h1>
-            <Link to="/login">チャレンジを探す</Link>
+            <Link to="/task/search">チャレンジを探す</Link>
             <Link to="/task/create">チャレンジを作る</Link>
+            <Link to="/task">チャレンジ一覧</Link>
         </div>
     );
 };
