@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MainHeader from './main-header';
 import MainContent from './main-content';
-import '../css/style.css';
+import '../assets/css/style.css';
 
 
 class MainLayout extends Component {

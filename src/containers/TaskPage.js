@@ -3,12 +3,15 @@ import { CenteredTabs, TabPanel } from '../components/UIkit';
 
 
 const TaskPage = () => {
-    const labels = ['参加中', '終了', '全て']; // タブのラベル名
+    const labels = ['進行中', '終了', '全て']; // タブのラベル名
 
     return(
         <div>
-            参加しているチャレンジの一覧を表示します。
-            <CenteredTabs labels={labels}>
+        
+
+
+
+            <CenteredTabs labels={['label1', 'label2', 'label3']}>
                 <div>aa</div>
                 <div>bb</div>
                 <div>cc</div>
