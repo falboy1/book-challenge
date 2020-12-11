@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, blinkMacSystemFont, "Noto Sans JP", lato, "Helvetica Neue", "Segoe UI", YuGothicM, YuGothic, Meiryo, sans-serif;
   font-size: 16px;
   line-height: 1.42857;
+  color: rgb(19, 19, 39);
 }
  
 h1 {
@@ -13,6 +14,18 @@ h1 {
 p {
   font-family: 'Noto Sans Japanese',   sans-serif;
   font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(51, 51, 51);
+}
+
+a:hover {
+  color: rgb(130, 130, 130);
 }
 
 code {
