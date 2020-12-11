@@ -9,8 +9,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: '2px 4px',
     display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
-    width: 400,
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    //alignItems: 'center',
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -25,16 +28,16 @@ const SearchInputBase = (props) => {
   const classes = useStyles();
 
   return (
-    <Paper component="form" className={classes.root}>
-      <InputBase
-        className={classes.input}
-        placeholder={props.placeholder}
-        inputProps={{ 'aria-label': 'search google maps' }}
-      />
-      <IconButton type="submit" className={classes.iconButton} aria-label="search">
-        <SearchIcon />
-      </IconButton>
-    </Paper>
+      <Paper component="form" className={classes.root} style={{width: props.width}}>
+        <InputBase
+          className={classes.input}
+          placeholder={props.placeholder}
+          inputProps={{ 'aria-label': 'search google maps' }}
+        />
+        <IconButton type="submit" className={classes.iconButton} aria-label="search">
+          <SearchIcon />
+        </IconButton>
+      </Paper>
   );
 }
 

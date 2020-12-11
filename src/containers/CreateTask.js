@@ -3,12 +3,12 @@ import { PrimaryButton, TextBox} from '../components/UIkit';
 
 const CreateTask = () => {
     return(
-        <div>
-            本を探す
-            <TextBox label={"チャレンジの題名"} />
-            <TextBox label={"詳細"} />
-            <TextBox label={"期間"} />
-            <PrimaryButton label={"作成"} />
+        <div className={'center'}>
+            チャレンジを企画する
+            <TextBox label={"チャレンジの題名"} width={'300px'}/>
+            <TextBox label={"詳細"} width={'300px'}/>
+            <TextBox label={"期間"} width={'300px'}/>
+            <PrimaryButton label={"作成"} width={'300px'}/>
         </div>
     );
 }

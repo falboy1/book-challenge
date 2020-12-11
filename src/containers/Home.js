@@ -16,11 +16,11 @@ const Home = () => {
                 </h1>
                 <img src={reading} className={'reading-log'}/>
             </div>
-            <div className={'my10 bold'}>
+            <div className={'my5 bold'}>
                 一人だと読書が続かない。そんな人にぴったりのWebサービスです。<br/>みんなで同じ本を読んで達成感や感想を共有しよう！
             </div>
-            <div className={'my10'}>
-                <PrimaryButton label={'無料で登録'}/>
+            <div className={'my30'}>
+                <PrimaryButton label={'無料で登録'} width={'200px'} padding={'20px 10px'}/>
             </div>
             <Link to="/task/search">チャレンジを探す</Link>
             <Link to="/task/create">チャレンジを作る</Link>

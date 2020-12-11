@@ -21,6 +21,7 @@ const TextBox = (props) => {
               variant="outlined" 
               onChange={props.onChange}
               fullWidth={props.fullWidth}
+              style={{width: props.width}}
             />
         </form>
     );

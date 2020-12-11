@@ -60,6 +60,16 @@
     margin-bottom: 10px;
 }
 
+.my20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.my30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .mx-auto {
     margin: 0 auto;
 }

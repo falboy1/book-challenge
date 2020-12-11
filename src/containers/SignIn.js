@@ -16,11 +16,13 @@ const SingIn = () => {
     const classes = useStyles();
 
     return (
-        <div>
-            <form className={classes.root} noValidate autoComplete="off">
-                <TextBox label={"IDまたはメールアドレス"} />
-                <TextBox label={"パスワード"} />
-                <PrimaryButton label={"ログイン"} />
+        <div className={'center'}>
+            <form noValidate autoComplete="off">
+                <TextBox label={"IDまたはメールアドレス"} width={'300px'}/>
+                <TextBox label={"パスワード"} width={'300px'}/>
+                <div>
+                    <PrimaryButton label={"ログイン"}  width={'300px'}/>
+                </div>
             </form>
         </div>
     );

@@ -2,12 +2,13 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import {makeStyles} from "@material-ui/styles";
 import {createStyles} from "@material-ui/core";
+import theme from './MyTheme';
+import {ThemeProvider} from '@material-ui/styles';
 
 const useStyles = makeStyles(() => (
     createStyles({
         "button": {
-            fontWeight: 600,
-            marginBottom: '8px',
+            fontWeight: 400,
             "&:hover": {
                 color: '#FFF'
             }
@@ -19,9 +20,20 @@ const PrimaryButton = (props) => {
     const classes = useStyles();
 
     return (
-        <Button className={classes.button} variant="contained" color="primary" endIcon={props.eIcon}>
-            {props.label}
-        </Button>
+        <ThemeProvider theme={theme}>
+            <Button
+                className={classes.button}
+                variant="contained"
+                color="primary"
+                endIcon={props.eIcon}
+                style={{
+                    width: props.width,
+                    padding: props.padding,
+                }}
+            >
+                {props.label}
+            </Button>
+        </ThemeProvider>
     );
 };
 
