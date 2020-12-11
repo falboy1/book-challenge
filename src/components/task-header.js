@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {PrimaryButton} from './UIkit';
-import {TextBox} from './UIkit';
 import CreateIcon from '@material-ui/icons/Create';
 import '../assets/css/style.css';
-import Box from '@material-ui/core/Box';
 
 class TaskHeader extends Component {
     render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles} from "@material-ui/core/styles";
-import {TextBox, PrimaryButton, TitleLogo} from '../components/UIkit';
+import {TextBox, PrimaryButton} from '../components/UIkit';
 
 const useStyles = makeStyles((theme) => ({
     root: {

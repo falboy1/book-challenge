@@ -1,12 +1,7 @@
 import React from 'react';
 import { PrimaryButton, TextBox, TextButton} from '../components/UIkit';
-import {Emoji} from 'emoji-mart';
-import NoteAddIcon from '@material-ui/icons/NoteAdd';
-import AddIcon from '@material-ui/icons/Add';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link} from 'react-router-dom';
-import theme from '../components/UIkit/MyTheme';
-import { ThemeProvider } from '@material-ui/core';
 
 const CreateTask = () => {
     return(
@@ -19,6 +14,7 @@ const CreateTask = () => {
             <TextBox 
                 label={"チャレンジの題名"}
                 placeholder={"例：ビジネス書を読もう！"}
+                required={'required'}
                 width={'300px'}
             />
             <TextBox 
@@ -26,7 +22,7 @@ const CreateTask = () => {
                 placeholder={'#ビジネス'}
                 width={'300px'}/>
             <TextBox 
-                label={"期間"} 
+                label={"期間"}
                 width={'300px'}/>
             <TextBox 
                 label={"説明"} 

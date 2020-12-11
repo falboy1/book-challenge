@@ -1,4 +1,3 @@
-import { Button, createStyles } from '@material-ui/core';
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {PrimaryButton} from '../components/UIkit';

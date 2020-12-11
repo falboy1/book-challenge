@@ -1,5 +1,5 @@
 import React from 'react';
-import { CenteredTabs, TabPanel } from '../components/UIkit';
+import { CenteredTabs } from '../components/UIkit';
 
 
 const TaskPage = () => {

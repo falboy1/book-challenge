@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MainHeader = (props) => {
+const MainHeader = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>

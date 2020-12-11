@@ -26,6 +26,7 @@ const TextBox = (props) => {
               multiline={props.multiline}
               rows={props.rows}
               placeholder={props.placeholder}
+              required={props.required}
               style={{
                 width: props.width,
               }}
