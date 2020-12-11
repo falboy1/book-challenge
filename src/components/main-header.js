@@ -2,11 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
+import { TitleLogo } from '../components/UIkit';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,9 +25,11 @@ const MainHeader = (props) => {
     <div className={classes.root}>
       <AppBar position="static" color="default" >
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            <Link to="/" style={{ textDecoration: 'none' }}>READING</Link>
-          </Typography>
+          <div className={classes.title}>
+            <Link to='/' style={{textDecoration: 'none'}}>
+              <TitleLogo className={classes.title} />
+            </Link>
+          </div>
           <Button><Link to="/login" style={{ textDecoration: 'none' }}>ログイン</Link></Button>
           <Button><Link to="/signup" style={{ textDecoration: 'none' }}>会員登録</Link></Button>
           <Button><Link to="/mypage" style={{ textDecoration: 'none' }}>マイページ</Link></Button>
