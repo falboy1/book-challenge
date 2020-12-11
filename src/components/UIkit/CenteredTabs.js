@@ -52,7 +52,7 @@ const CenteredTabs = (props) => {
                 centered
             >
                 {/* 配列を受け取って<Tab>を作成 */}
-                {props.labels.map(l => <Tab label={l}></Tab>)}
+                {props.labels.map(label => <Tab label={label}></Tab>)}
             </Tabs>
         </Paper>
 

@@ -60,6 +60,11 @@
     margin-bottom: 10px;
 }
 
+.my15 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .my20 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -77,6 +82,23 @@
 /* フォント */
 .bold {
     font-weight: bold;
+}
+
+/*　スペース */
+.vertical-space-20 {
+    height: 20px;
+}
+
+.vertical-space-30 {
+    height: 30px;
+}
+
+.vertical-space-40 {
+    height: 40px;
+}
+
+.vertical-space-50 {
+    height: 50px;
 }
 
 /*　個別 */

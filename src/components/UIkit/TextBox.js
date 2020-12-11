@@ -1,6 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import theme from './MyTheme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,6 +15,7 @@ const TextBox = (props) => {
     const classes = useStyles();
 
     return (
+      <ThemeProvider theme={theme}>
         <form className={classes.root} noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
@@ -21,9 +23,15 @@ const TextBox = (props) => {
               variant="outlined" 
               onChange={props.onChange}
               fullWidth={props.fullWidth}
-              style={{width: props.width}}
+              multiline={props.multiline}
+              rows={props.rows}
+              placeholder={props.placeholder}
+              style={{
+                width: props.width,
+              }}
             />
         </form>
+      </ThemeProvider>
     );
 }
 

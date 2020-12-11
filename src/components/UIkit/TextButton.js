@@ -9,21 +9,17 @@ const useStyles = makeStyles(() => (
     createStyles({
         "button": {
             fontWeight: 400,
-            "&:hover": {
-                color: '#FFF'
-            }
         }
     })
 ));
 
-const PrimaryButton = (props) => {
+const TextButton = (props) => {
     const classes = useStyles();
 
     return (
         <ThemeProvider theme={theme}>
             <Button
                 className={classes.button}
-                variant="contained"
                 color="primary"
                 startIcon={props.startIcon}
                 endIcon={props.endIcon}
@@ -38,4 +34,4 @@ const PrimaryButton = (props) => {
     );
 };
 
-export default PrimaryButton;
+export default TextButton;
