@@ -10,6 +10,10 @@
     justify-content: center;
 }
 
+.flex-around {
+    justify-content: space-around;
+}
+
 .text-center {
     text-align: center;
 }
@@ -21,6 +25,17 @@
 }
 
 /* 横幅 */
+.w30 {
+    width: 30%;
+}
+.w40 {
+    width: 40%;
+}
+
+.w50 {
+    width: 50%;
+}
+
 .w80 {
     width: 80%;
 }
