@@ -1,9 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import MyTheme from './MyTheme';
 
 
 const useStyles = makeStyles({
@@ -43,6 +44,7 @@ const CenteredTabs = (props) => {
 
   return (
     <div>
+        <ThemeProvider theme={MyTheme}>
         <Paper className={classes.root}>
             <Tabs
                 value={value}
@@ -60,6 +62,7 @@ const CenteredTabs = (props) => {
         {props.children.map((child, index) => 
             <TabPanel value={value} index={index}>{child}</TabPanel>)
         }
+        </ThemeProvider>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { CenteredTabs } from '../components/UIkit';
+import '../assets/css/style.css';
 
 
 const TaskPage = () => {
@@ -7,15 +8,14 @@ const TaskPage = () => {
 
     return(
         <div>
-        
-
-
-
-            <CenteredTabs labels={['label1', 'label2', 'label3']}>
-                <div>aa</div>
-                <div>bb</div>
-                <div>cc</div>
-            </CenteredTabs>
+            <div className='vertical-space-40' />
+            <div className='w70 center'>
+                <CenteredTabs labels={['進行中', '終了済み', 'すべて']}>
+                    <div>aa</div>
+                    <div>bb</div>
+                    <div>cc</div>
+                </CenteredTabs>
+            </div>
         </div>
     );
 }
