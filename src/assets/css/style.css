@@ -24,6 +24,11 @@
     margin-right: auto;
 }
 
+/* 右寄せ */
+.right {
+    text-align: right;
+}
+
 /* 横幅 */
 .w30 {
     width: 30%;

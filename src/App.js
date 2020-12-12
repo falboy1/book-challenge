@@ -11,13 +11,15 @@ class App extends Component {
         return(
             <React.Fragment>
                 <MainHeader />
-                <Route exact path="/" component={Home} />
-                <Route path="/login" component={SignIn} />
-                <Route path="/signup" component={SignUp} />
-                <Route path="/mypage" component={MyPage} />
-                <Route path="/task/create" component={CreateTask} />
-                <Route path="/task/search" component={SearchPage} />
-                <Route path="/task/all" component={TaskPage} />
+                <div className="content">
+                    <Route exact path="/" component={Home} />
+                    <Route path="/login" component={SignIn} />
+                    <Route path="/signup" component={SignUp} />
+                    <Route path="/mypage" component={MyPage} />
+                    <Route path="/task/create" component={CreateTask} />
+                    <Route path="/task/search" component={SearchPage} />
+                    <Route path="/task/all" component={TaskPage} />
+                </div>
             </React.Fragment>
         );
     }

@@ -7,14 +7,20 @@ const CreateTask = () => {
     return(
         <div className={'center'}>
             <div className={'vertical-space-40'} />
-            <h2>チャレンジを作る</h2>
+            <h2>読書会を作る</h2>
             <Link>
                 <TextButton label={'まずは本を選ぶ'} startIcon={<SearchIcon/>}/>
             </Link>
             <TextBox 
-                label={"チャレンジの題名"}
+                label={"読書会の題名"}
                 placeholder={"例：ビジネス書を読もう！"}
                 required={'required'}
+                width={'300px'}
+            />
+            <TextBox 
+                label={"選択された本"}
+                required={'required'}
+                disabled={'disable'}
                 width={'300px'}
             />
             <TextBox 

@@ -7,13 +7,19 @@ import App from './App';
 import {createBrowserHistory} from 'history';
 import { ConnectedRouter } from 'connected-react-router';
 import createStore from './createStore';
+import { applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 
 // historyのインスタンス
 const history = createBrowserHistory();
 
 // Storeの生成
-const store = createStore(history);
+const store = createStore(
+  history,
+  applyMiddleware(thunk, logger)
+);
 
 
 ReactDOM.render(

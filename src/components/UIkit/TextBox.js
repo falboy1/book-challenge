@@ -20,13 +20,14 @@ const TextBox = (props) => {
             <TextField
               id="outlined-basic"
               label={props.label}
-              variant="outlined" 
+              variant="outlined"
               onChange={props.onChange}
               fullWidth={props.fullWidth}
               multiline={props.multiline}
               rows={props.rows}
               placeholder={props.placeholder}
               required={props.required}
+              disabled={props.disabled}
               style={{
                 width: props.width,
               }}

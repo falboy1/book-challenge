@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import {makeStyles} from "@material-ui/styles";
 import {createStyles, IconButton} from "@material-ui/core";
 import theme from './MyTheme';
@@ -14,7 +13,6 @@ const useStyles = makeStyles(() => (
         },
         "icon": {
             color: '#FFF',
-            
         },
         "text": {
             marginTop: '3px',

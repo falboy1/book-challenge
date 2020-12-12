@@ -1,7 +1,8 @@
 import React from 'react';
 import { Profile} from '../components/UserPage';
 import '../assets/css/style.css';
-import { CenteredTabs } from '../components/UIkit';
+import { CenteredTabs, TextButton } from '../components/UIkit';
+import SettingsIcon from '@material-ui/icons/Settings';
 
 
 const MyPage = () => {
@@ -16,6 +17,7 @@ const MyPage = () => {
                 follow={"5"}
                 sentence={"はやく一人前になりたい"}
             />
+
             <CenteredTabs labels={['チャレンジ', 'お気に入りの本']}>
                 <div>a</div>
                 <div>b</div>
