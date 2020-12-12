@@ -3,7 +3,7 @@ import { PrimaryButton, TextBox, TextButton} from '../components/UIkit';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link} from 'react-router-dom';
 
-const CreateTask = () => {
+const CreateClub = () => {
     return(
         <div className={'center'}>
             <div className={'vertical-space-40'} />
@@ -42,4 +42,4 @@ const CreateTask = () => {
     );
 }
 
-export default CreateTask;
+export default CreateClub;

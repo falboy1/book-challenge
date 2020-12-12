@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import '../assets/css/style.css';
 
 
-const TaskPage = () => {
+const ClubPage = () => {
     const labels = ['進行中', '終了', '全て']; // タブのラベル名
 
     return(
@@ -47,4 +47,4 @@ const TaskPage = () => {
     );
 }
 
-export default TaskPage;
+export default ClubPage;

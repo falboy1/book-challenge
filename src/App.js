@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import MainHeader from './components/main-header';
 import MainContent from './components/main-content';
-import {Home, SignIn, CreateTask, SignUp, MyPage, SearchPage} from './containers';
+import {Home, SignIn, CreateClub, SignUp, MyPage, SearchPage} from './containers';
 import {Switch, Route} from 'react-router';
-import TaskPage from './containers/TaskPage';
+import ClubPage from './containers/ClubPage';
 
 
 class App extends Component {
@@ -16,9 +16,9 @@ class App extends Component {
                     <Route path="/login" component={SignIn} />
                     <Route path="/signup" component={SignUp} />
                     <Route path="/mypage" component={MyPage} />
-                    <Route path="/task/create" component={CreateTask} />
-                    <Route path="/task/search" component={SearchPage} />
-                    <Route path="/task/all" component={TaskPage} />
+                    <Route path="/club/create" component={CreateClub} />
+                    <Route path="/club/search" component={SearchPage} />
+                    <Route path="/club/all" component={ClubPage} />
                 </div>
             </React.Fragment>
         );

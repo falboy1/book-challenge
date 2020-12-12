@@ -23,9 +23,9 @@ const Home = () => {
                     <PrimaryButton label={'無料で登録'} width={'200px'} padding={'20px 10px'}/>
                 </Link>
             </div>
-            <Link to="/task/search">チャレンジを探す</Link>
-            <Link to="/task/create">チャレンジを作る</Link>
-            <Link to="/task/all">チャレンジ一覧</Link>
+            <Link to="/club/search">チャレンジを探す</Link>
+            <Link to="/club/create">チャレンジを作る</Link>
+            <Link to="/club/all">チャレンジ一覧</Link>
         </div>
     );
 };
