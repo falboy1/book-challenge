@@ -19,6 +19,7 @@ const TextBox = (props) => {
         <form className={classes.root} noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
+              value={props.value}
               label={props.label}
               variant="outlined"
               onChange={props.onChange}
@@ -28,6 +29,7 @@ const TextBox = (props) => {
               placeholder={props.placeholder}
               required={props.required}
               disabled={props.disabled}
+              type={props.type}
               style={{
                 width: props.width,
               }}
