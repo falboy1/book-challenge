@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import App from './App';
 import {createBrowserHistory} from 'history';
 import { ConnectedRouter } from 'connected-react-router';
-import createStore from './createStore';
+import createStore from './store/store';
 import { applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
@@ -16,7 +16,7 @@ import logger from 'redux-logger';
 const history = createBrowserHistory();
 
 // Storeの生成
-const store = createStore(
+export const store = createStore(
   history,
   applyMiddleware(thunk, logger)
 );

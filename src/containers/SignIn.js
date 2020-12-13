@@ -19,14 +19,15 @@ const SingIn = () => {
         <div className={'center'}>
             <div className={'vertical-space-40'} />
             <h2>Mindokuにログイン</h2>
-            <form noValidate autoComplete="off">
-                <TextBox label={"IDまたはメールアドレス"} width={'300px'}/>
-                <TextBox label={"パスワード"} width={'300px'}/>
-                <div className={'vertical-space-20'}/>
-                <div>
-                    <PrimaryButton label={"ログイン"}  width={'300px'} padding={'15px 10px'}/>
-                </div>
-            </form>
+            <TextBox 
+                label={"IDまたはメールアドレス"} required={true} width={'300px'}/>
+            <TextBox 
+                label={"パスワード"} required={true} width={'300px'}
+            />
+            <div className={'vertical-space-20'}/>
+            <div>
+                <PrimaryButton label={"ログイン"}  width={'300px'} padding={'15px 10px'}/>
+            </div>
         </div>
     );
 }
