@@ -5,7 +5,7 @@ export const initialState = {
         username: "",
         email: "",
         icon: "",
-        nickName: "",
+        profile: "",
     },
     test: [],
 };

@@ -5,3 +5,4 @@ export {default as CreateClub} from './CreateClub';
 export {default as SearchPage} from './SearchPage';
 export {default as SignUp} from './SignUp';
 export {default as Reset} from './Reset';
+export {default as EditUser} from './EditUser';

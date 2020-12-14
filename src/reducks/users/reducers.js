@@ -14,6 +14,11 @@ export const UsersReducer = (state = initialState.users, action) => {
             return {
                 ...action.paylod
             }
+        case Actions.EDIT_USER_PROFILE:
+            return {
+                ...state,
+                ...action.payload
+            }
         default:
             return state;
     }

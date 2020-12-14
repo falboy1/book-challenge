@@ -1,6 +1,6 @@
 import {auth, db, FirebaseTimestamp} from '../../firebase'
 import {push, goBack} from 'connected-react-router';
-import { signInAction, signOutAction } from './actions';
+import { editProfileAction, signInAction, signOutAction } from './actions';
 
 export const listenAuthState = () => {
     return async (dispatch) => {
@@ -24,8 +24,6 @@ export const listenAuthState = () => {
                                 icon: data.icon,
                                 nickname: data.nickname
                             }));
-
-                            dispatch(push('/'));
                         })
             } else {
                 dispatch(push('/signin'))
@@ -108,7 +106,7 @@ export const signIn = (email, password) => {
                                 username: data.username,
                                 email: data.email,
                                 icon: data.icon,
-                                nickname: data.nickname
+                                profile: data.profile,
                             }));
 
                             dispatch(push('/'));
@@ -124,16 +122,19 @@ export const signIn = (email, password) => {
 
 export const signOut = () => {
     return async (dispatch) => {
-        auth.signOut()
+        const result = window.confirm('ログアウトしますか？');
+        if (result){
+            auth.signOut()
             .then(() => {
                 dispatch(signOutAction())
                 dispatch(push('/signin'))
             });
+        }
     }
 }
 
 export const resetPassword = (email) => {
-    return async(dispatch) => {
+    return async (dispatch) => {
         if( email==='' ){
             alert("未入力の項目があります。");
             return false;
@@ -146,5 +147,29 @@ export const resetPassword = (email) => {
                     alert('パスワードリセットに失敗しました。')
                 })
         }
+    }
+}
+
+export const editProfile = (uid, username, icon, profile) => {
+    return async (dispatch) => {
+        const timestamp = FirebaseTimestamp.now()
+        db.collection("users").doc(uid).set({
+            username: username,
+            //icon: icon,
+            profile: profile,
+            updated_at: timestamp
+        }, {merge: true})
+        .then(function() {
+            console.log("success")
+            dispatch(editProfileAction({
+                username: username,
+                icon: icon,
+                profile: profile,
+            }))
+            dispatch(push('/mypage'))
+        })
+        .catch(function(error){
+            console.error("error", error)
+        })
     }
 }

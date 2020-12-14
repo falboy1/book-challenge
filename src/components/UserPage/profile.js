@@ -12,7 +12,7 @@ const Profile = (props) => {
                 src={props.imgPath}
                 style={{width: '150px', height:'150px'}}
             />
-            <h3>{props.nickname}さん</h3>
+            <h3>{props.username}さん</h3>
             <p>{props.id}</p>
             <p>フォロワー{props.follower}人  フォロー中{props.follow}人</p>
             <p>{props.sentence}</p>

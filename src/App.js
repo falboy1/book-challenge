@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MainHeader from './components/main-header';
 import MainContent from './components/main-content';
-import {Home, SignIn, CreateClub, SignUp, MyPage, SearchPage, Reset} from './templates';
+import {Home, SignIn, CreateClub, SignUp, MyPage, SearchPage, Reset, EditUser} from './templates';
 import {Switch, Route} from 'react-router';
 import ClubPage from './templates/ClubPage';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,6 +23,7 @@ function App() {
                 <Route exact path="/signin/reset" component={Reset} />
                 <Auth>
                     <Route exact path="/mypage" component={MyPage} />
+                    <Route exact path="/mypage/edit" component={EditUser} />
                     <Route exact path="/club/create" component={CreateClub} />
                     <Route exact path="/club/search" component={SearchPage} />
                     <Route exact path="/club/all" component={ClubPage} />

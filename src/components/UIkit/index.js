@@ -7,3 +7,4 @@ export {default as MyTheme} from './MyTheme';
 export {default as TextButton } from './TextButton';
 export {default as AvatarIcon} from './AvatarIcon';
 export {default as MyIconButton} from './MyIconButton';
+export {default as SecondaryButton} from './SecondaryButton';

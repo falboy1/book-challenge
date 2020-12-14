@@ -4,10 +4,11 @@ export const signInAction = (userState) => {
         type: 'SIGN_IN',
         payload: {
             isSignedIn: true,
+            uid: userState.uid,
             username: userState.username,
             email: userState.email,
             icon: userState.icon,
-            nickName: userState.nickName,
+            profile: userState.profile,
         }
     }
 }
@@ -18,10 +19,24 @@ export const signOutAction = (userState) => {
         type: 'SIGN_OUT',
         payload: {
             isSignedIn: false,
+            uid: '',
             username: '',
             email: '',
             icon: '',
-            nickName: '',
+            profile: '',
+        }
+    }
+}
+
+
+export const EDIT_USER_PROFILE = 'EDIT_USER_PROFILE';
+export const editProfileAction = (userState) => {
+    return {
+        type: 'EDIT_USER_PROFILE',
+        payload: {
+            username: userState.username,
+            icon: userState.icon,
+            profile: userState.profile,
         }
     }
 }

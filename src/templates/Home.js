@@ -20,7 +20,7 @@ const Home = () => {
             </div>
             <div className={'my30'}>
                 <Link to="/signup"> 
-                    <PrimaryButton label={'無料で登録'} width={'200px'} padding={'20px 10px'}/>
+                    <PrimaryButton label={'さっそく使い始める'} width={'200px'} padding={'20px 10px'}/>
                 </Link>
             </div>
             <Link to="/club/search">チャレンジを探す</Link>
