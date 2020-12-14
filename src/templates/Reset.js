@@ -1,11 +1,11 @@
 import React, {useCallback, useState }from 'react';
 import {TextBox, PrimaryButton} from '../components/UIkit';
 import {useDispatch} from 'react-redux';
-import {signIn} from '../reducks/users/operation'
-import { push } from 'connected-react-router'
+import {resetPassword} from '../reducks/users/operation'
+import { Link } from 'react-router-dom';
 
 
-const SingIn = () => {
+const Reset = () => {
     const dispatch = useDispatch();
 
     // Hook
@@ -17,15 +17,12 @@ const SingIn = () => {
         setEmail(event.target.value)
     }, [setEmail]);
     
-    const inputPassword = useCallback((event) => {
-        setPassword(event.target.value)
-    }, [setPassword]);
 
 
     return (
         <div className={'center'}>
             <div className={'vertical-space-40'} />
-            <h2>Mindokuにログイン</h2>
+            <h2>パスワードをリセット</h2>
             <TextBox 
                 label={"メールアドレス"}
                 required={true}
@@ -34,27 +31,18 @@ const SingIn = () => {
                 value={email}
                 onChange={inputEmail}
                 width={'300px'}/>
-            <TextBox 
-                label={"パスワード"}
-                required={true}
-                type={'password'}
-                value={password}
-                onChange={inputPassword}
-                width={'300px'}
-            />
             <div className={'vertical-space-20'}/>
             <div>
                 <PrimaryButton 
-                    label={"ログイン"}  
-                    onClick={() => dispatch(signIn(email, password))}
+                    label={"メールを送信"}  
+                    onClick={() => dispatch(resetPassword(email))}
                     padding={'15px 10px'}
                     width={'300px'} 
                 />
             </div>
-            <p onClick={() => dispatch(push('/signup'))}>アカウントをお持ちでない方はこちら</p>
-            <p onClick={() => dispatch(push('/signin/reset'))}>パスワードを忘れた方はこちら</p>
+        
         </div>
     );
 }
 
-export default SingIn;
+export default Reset;

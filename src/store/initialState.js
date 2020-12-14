@@ -4,6 +4,7 @@ export const initialState = {
         uid: "",
         username: "",
         email: "",
+        icon: "",
         nickName: "",
     },
     test: [],

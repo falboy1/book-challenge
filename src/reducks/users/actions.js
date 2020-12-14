@@ -6,6 +6,7 @@ export const signInAction = (userState) => {
             isSignedIn: true,
             username: userState.username,
             email: userState.email,
+            icon: userState.icon,
             nickName: userState.nickName,
         }
     }
@@ -19,6 +20,7 @@ export const signOutAction = (userState) => {
             isSignedIn: false,
             username: '',
             email: '',
+            icon: '',
             nickName: '',
         }
     }

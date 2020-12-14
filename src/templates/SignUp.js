@@ -2,6 +2,7 @@ import React , {useCallback, useState} from 'react';
 import {TextBox, PrimaryButton} from '../components/UIkit';
 import {signUp} from '../reducks/users/operation';
 import {useDispatch} from 'react-redux';
+import {push } from 'connected-react-router';
 
 
 const SignUp = () => {
@@ -80,6 +81,7 @@ const SignUp = () => {
                     onClick={() => dispatch(signUp(username, email, password, confirmPassword))}
                   />
                 </div>
+                <p onClick={() => dispatch(push('/signin'))}>アカウントを既にお持ちの方はこちら</p>
             </form>
         </div>
   );

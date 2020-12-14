@@ -10,6 +10,10 @@ export const UsersReducer = (state = initialState.users, action) => {
                 ...action.payload
     
             }
+        case Actions.SIGN_OUT:
+            return {
+                ...action.paylod
+            }
         default:
             return state;
     }

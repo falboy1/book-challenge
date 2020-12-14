@@ -1,6 +1,38 @@
 import {auth, db, FirebaseTimestamp} from '../../firebase'
 import {push, goBack} from 'connected-react-router';
-import { signInAction } from './actions';
+import { signInAction, signOutAction } from './actions';
+
+export const listenAuthState = () => {
+    return async (dispatch) => {
+        return auth.onAuthStateChanged(user => {
+            if (user) {
+                const uid = user.uid;
+                db.collection('users').doc(uid).get()
+                        .then(snapshot => {
+                            const data = snapshot.data();
+
+                            if (!data) {
+                                throw new Error("ユーザーデータが存在しません。");
+                            }
+
+                            dispatch(signInAction({
+                                // TODO users :{...}にならないから解決
+                                isSignedIn: true,
+                                uid: uid,
+                                username: data.username,
+                                email: data.email,
+                                icon: data.icon,
+                                nickname: data.nickname
+                            }));
+
+                            dispatch(push('/'));
+                        })
+            } else {
+                dispatch(push('/signin'))
+            }
+        })
+    }
+}
 
 export const signUp = (username, email, password, confirmPassword) => {
     return async (dispatch) => {
@@ -75,6 +107,7 @@ export const signIn = (email, password) => {
                                 uid: uid,
                                 username: data.username,
                                 email: data.email,
+                                icon: data.icon,
                                 nickname: data.nickname
                             }));
 
@@ -86,5 +119,32 @@ export const signIn = (email, password) => {
                 alert('ログインに失敗しました。もう一度お試しください。')
                 throw new Error(error);
             })
+    }
+}
+
+export const signOut = () => {
+    return async (dispatch) => {
+        auth.signOut()
+            .then(() => {
+                dispatch(signOutAction())
+                dispatch(push('/signin'))
+            });
+    }
+}
+
+export const resetPassword = (email) => {
+    return async(dispatch) => {
+        if( email==='' ){
+            alert("未入力の項目があります。");
+            return false;
+        } else {
+            auth.sendPasswordResetEmail(email)
+                .then(() => {
+                    alert('パスワードリセット用のメールが送信されました。')
+                    dispatch(push('/signin'))
+                }).catch (() => {
+                    alert('パスワードリセットに失敗しました。')
+                })
+        }
     }
 }

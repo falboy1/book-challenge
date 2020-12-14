@@ -54,13 +54,13 @@ const CenteredTabs = (props) => {
                 centered
             >
                 {/* 配列を受け取って<Tab>を作成 */}
-                {props.labels.map(label => <Tab label={label}></Tab>)}
+                {props.labels.map(label => <Tab key={label} label={label}></Tab>)}
             </Tabs>
         </Paper>
 
         {/* 子のタグをもとにページのコンテンツを表示 */}
         {props.children.map((child, index) => 
-            <TabPanel value={value} index={index}>{child}</TabPanel>)
+            <TabPanel key={index} value={value} index={index}>{child}</TabPanel>)
         }
         </ThemeProvider>
     </div>
