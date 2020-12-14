@@ -25,7 +25,7 @@ export default function createStore(history){
     return reduxCreateStore(
         combineReducers(
             {
-                users:UsersReducer,
+                users: UsersReducer,
                 router: connectRouter(history),
             }
         ),

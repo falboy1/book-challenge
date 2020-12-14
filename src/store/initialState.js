@@ -1,11 +1,10 @@
-const initialState = {
+export const initialState = {
     users: {
         isSignedIn: false,
-        uid: "", // firebaseのID
+        uid: "",
         username: "",
         email: "",
         nickName: "",
     },
+    test: [],
 };
-
-export default initialState;

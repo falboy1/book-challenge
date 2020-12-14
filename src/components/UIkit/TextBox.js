@@ -18,7 +18,6 @@ const TextBox = (props) => {
       <ThemeProvider theme={theme}>
         <form className={classes.root} noValidate autoComplete="off">
             <TextField
-              id="outlined-basic"
               value={props.value}
               label={props.label}
               variant="outlined"

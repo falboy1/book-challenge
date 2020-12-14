@@ -1,9 +1,10 @@
 import {auth, db, FirebaseTimestamp} from '../../firebase'
 import {push, goBack} from 'connected-react-router';
+import { signInAction } from './actions';
 
 export const signUp = (username, email, password, confirmPassword) => {
     return async (dispatch) => {
-        // 入力項目のチェック
+        // 入力チェック
         if (username === '' || email === '' || password === '' || confirmPassword === ''){
             alert("未入力の項目があります。")
             return false
@@ -40,6 +41,49 @@ export const signUp = (username, email, password, confirmPassword) => {
                 }
             }).catch ((error) => {
                 alert('アカウントの登録に失敗しました。もう一度お試しください。')
+                throw new Error(error);
+            })
+    }
+}
+
+export const signIn = (email, password) => {
+    return async (dispatch) => {
+        // 入力チェック
+        if (email === "" || password === "") {
+            alert("未入力の項目があります。");
+            return false;
+        }
+
+        auth.signInWithEmailAndPassword(email, password)
+            .then( result => {
+                const userState = result.user;
+                console.log(userState)
+                if (userState) {
+                    const uid = userState.uid;
+                    
+                    db.collection('users').doc(uid).get()
+                        .then(snapshot => {
+                            const data = snapshot.data();
+
+                            if (!data) {
+                                throw new Error("ユーザーデータが存在しません。");
+                            }
+
+                            dispatch(signInAction({
+                                // TODO users :{...}にならないから解決
+                                isSignedIn: true,
+                                uid: uid,
+                                username: data.username,
+                                email: data.email,
+                                nickname: data.nickname
+                            }));
+
+                            dispatch(push('/'));
+                        })
+                }
+            }).catch ((error) => {
+                // 失敗
+                alert('ログインに失敗しました。もう一度お試しください。')
                 throw new Error(error);
             })
     }
