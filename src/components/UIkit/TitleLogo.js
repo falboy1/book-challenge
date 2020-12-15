@@ -17,7 +17,7 @@ const TitleLogo = (props) => {
     return (
         <div>
             <Typography variant='h6' className={classes.root} fontWeight='500'>
-                Mindoku
+                Mindoku-β
             </Typography>
         </div>
     );

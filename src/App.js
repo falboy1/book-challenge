@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MainHeader from './components/main-header';
+import {MainHeader} from './components/Header';
 import MainContent from './components/main-content';
 import {Home, SignIn, CreateClub, SignUp, MyPage, SearchPage, Reset, EditUser} from './templates';
 import {Switch, Route} from 'react-router';
