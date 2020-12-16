@@ -121,9 +121,49 @@
     height: 50px;
 }
 
+/* 表示 */
+.display-none {
+    display: none;
+}
+
+/* hover */
+.pointer {
+    cursor: pointer;
+}
+
 /*　個別 */
 .reading-log {
     height: 2.5rem;
     margin-top: 23px;
     margin-left: 8px;
+}
+
+.editImage {
+    position: relative;
+}
+
+.editImage img {
+    width: 100%;
+    opacity: .6;
+}
+
+.editImage svg {
+    width: 100%;
+    opacity: .6;
+}
+
+.editImage p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform : translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+    background-color: gray;
+    font-weight: bold; /*太字に*/
+    font-size: 1em;/*サイズ2倍*/
 }

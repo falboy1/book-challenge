@@ -33,7 +33,7 @@ const CreateClub = () => {
             <TextBox 
                 label={"説明"} 
                 placeholder={'例：誰でも参加歓迎です！'}
-                multiline={'multiline'} 
+                multiline={true} 
                 rows={4} 
                 width={'300px'}/>
             <div className={'vertical-space-20'}/>

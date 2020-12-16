@@ -16,8 +16,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  toolbar: {
+    margin: 'auto',
+    maxWidth: 1080,
+    width: '95%',
+  },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(5),
   },
   title: {
     flexGrow: 1,
@@ -32,29 +37,30 @@ const MainHeader = () => {
     const username = getUsername(selector);
     const isSignedIn = getIsSignedIn(selector);
 
-
+    // スタイル
     const classes = useStyles();
+
     return (
-    <div className={classes.root}>
-        <AppBar position="static" color="default" >
-            <Toolbar>
-                <div className={classes.title} onClick={() => dispatch(push('/'))}>
-                    <TitleLogo className={classes.title} />
-                </div>
-                {/* ログインされていない場合*/}
-                {!isSignedIn && (
-                    <div>
-                        <Button onClick={() => dispatch(push('/signin'))}>ログイン</Button>
-                        <Button onClick={() => dispatch(push('/signup'))}>会員登録</Button>
+        <div className={classes.root}>
+            <AppBar position="static" color="default" >
+                <Toolbar className={classes.toolbar}>
+                    <div className={classes.title} onClick={() => dispatch(push('/'))}>
+                        <TitleLogo className={classes.title} />
                     </div>
-                )}
-                {/* ログイン済みの場合*/}
-                { isSignedIn && (
-                    <UserIconMenu />
-                )}
-            </Toolbar>
-        </AppBar>
-    </div>
+                    {/* ログインされていない場合*/}
+                    {!isSignedIn && (
+                        <div>
+                            <Button onClick={() => dispatch(push('/signin'))}>ログイン</Button>
+                            <Button onClick={() => dispatch(push('/signup'))}>会員登録</Button>
+                        </div>
+                    )}
+                    {/* ログイン済みの場合*/}
+                    { isSignedIn && (
+                        <UserIconMenu className={classes.menuButton}/>
+                    )}
+                </Toolbar>
+            </AppBar>
+        </div>
     );
 }
 

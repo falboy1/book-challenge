@@ -40,15 +40,15 @@ const UserIconMenu= () => {
             >
                 <MenuItem onClick={() => {
                     handleClose();
-                    dispatch(signOut());
-                }}>
-                    ログアウト
-                </MenuItem>
-                <MenuItem onClick={() => {
-                    handleClose();
                     dispatch(push('/mypage'));    
                 }}>
                     マイページ
+                </MenuItem>
+                <MenuItem onClick={() => {
+                    handleClose();
+                    dispatch(signOut());
+                }}>
+                    ログアウト
                 </MenuItem>
             </Menu>
         </div>

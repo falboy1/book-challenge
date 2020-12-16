@@ -1,12 +1,15 @@
-import {auth, db, FirebaseTimestamp} from '../../firebase'
+import {auth, db, storage, FirebaseTimestamp} from '../../firebase'
 import {push, goBack} from 'connected-react-router';
 import { editProfileAction, signInAction, signOutAction } from './actions';
 
+
+// 認証済みかどうか確認 : Authコンポーネントから利用
 export const listenAuthState = () => {
     return async (dispatch) => {
         return auth.onAuthStateChanged(user => {
             if (user) {
                 const uid = user.uid;
+                // firestoreからデータを取得
                 db.collection('users').doc(uid).get()
                         .then(snapshot => {
                             const data = snapshot.data();
@@ -16,13 +19,12 @@ export const listenAuthState = () => {
                             }
 
                             dispatch(signInAction({
-                                // TODO users :{...}にならないから解決
                                 isSignedIn: true,
                                 uid: uid,
                                 username: data.username,
                                 email: data.email,
                                 icon: data.icon,
-                                nickname: data.nickname
+                                profile: data.profile
                             }));
                         })
             } else {
@@ -32,6 +34,8 @@ export const listenAuthState = () => {
     }
 }
 
+
+// サインアップ: firebaseの認証とfirestoreのドキュメント作成
 export const signUp = (username, email, password, confirmPassword) => {
     return async (dispatch) => {
         // 入力チェック
@@ -76,6 +80,8 @@ export const signUp = (username, email, password, confirmPassword) => {
     }
 }
 
+
+// サインイン
 export const signIn = (email, password) => {
     return async (dispatch) => {
         // 入力チェック
@@ -83,14 +89,13 @@ export const signIn = (email, password) => {
             alert("未入力の項目があります。");
             return false;
         }
-
+        // firebase authの認証を利用
         auth.signInWithEmailAndPassword(email, password)
             .then( result => {
                 const userState = result.user;
-                console.log(userState)
                 if (userState) {
                     const uid = userState.uid;
-                    
+                    // 自分のデータをfirestoreから取得
                     db.collection('users').doc(uid).get()
                         .then(snapshot => {
                             const data = snapshot.data();
@@ -100,7 +105,6 @@ export const signIn = (email, password) => {
                             }
 
                             dispatch(signInAction({
-                                // TODO users :{...}にならないから解決
                                 isSignedIn: true,
                                 uid: uid,
                                 username: data.username,
@@ -108,7 +112,7 @@ export const signIn = (email, password) => {
                                 icon: data.icon,
                                 profile: data.profile,
                             }));
-
+                            // 認証後の遷移
                             dispatch(push('/'));
                         })
                 }
@@ -120,6 +124,7 @@ export const signIn = (email, password) => {
     }
 }
 
+// サインアウト
 export const signOut = () => {
     return async (dispatch) => {
         const result = window.confirm('ログアウトしますか？');
@@ -133,8 +138,10 @@ export const signOut = () => {
     }
 }
 
+// パスワードリセットメールの送信
 export const resetPassword = (email) => {
     return async (dispatch) => {
+        // 入力チェック
         if( email==='' ){
             alert("未入力の項目があります。");
             return false;
@@ -150,22 +157,33 @@ export const resetPassword = (email) => {
     }
 }
 
+// プロフィール情報の変更
 export const editProfile = (uid, username, icon, profile) => {
     return async (dispatch) => {
+        // 入力チェック
+        if (username === ''){
+            alert('ユーザネームを入力してください')
+            return false
+        }
+        // TODO: 不適切な名前をはじく
+
+        // タイムスタンプ取得
         const timestamp = FirebaseTimestamp.now()
+        // firestoreに追加
         db.collection("users").doc(uid).set({
             username: username,
-            //icon: icon,
+            icon: icon,
             profile: profile,
             updated_at: timestamp
         }, {merge: true})
         .then(function() {
-            console.log("success")
+            // プロフィールを編集
             dispatch(editProfileAction({
                 username: username,
                 icon: icon,
                 profile: profile,
             }))
+            // マイページに戻す
             dispatch(push('/mypage'))
         })
         .catch(function(error){
