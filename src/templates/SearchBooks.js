@@ -7,12 +7,26 @@ import axios from 'axios';
 const SearchBooks = () => {
 
     // Hook
-    const [keyword, setKeyword] = useState("羊と鋼");
+    const [keyword, setKeyword] = useState("");
+    const [search, setSearch] = useState("");
+    const [data, setData] = useState([]);
 
     // callback
     const inputKeyword = useCallback((event) => {
         setKeyword(event.target.value)
-    }, [setKeyword]);    
+    }, [setKeyword]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+        const result = await axios(
+            `https://www.googleapis.com/books/v1/volumes?q=${search}`
+        );
+            setData(result.data.items);
+        };
+        
+        fetchData();
+    }, [search]);
+        
 
     return (
         <div className="center">
@@ -26,9 +40,14 @@ const SearchBooks = () => {
                 width={'300px'}
             />
 
-            <PrimaryButton label={"検索する"} width={'300px'} padding={'15px 10px'}/>
+            <PrimaryButton 
+                label={"検索する"} 
+                width={'300px'} 
+                padding={'15px 10px'} 
+                onClick={() => setSearch(keyword)}
+            />
             
-            <BookList keyword={keyword} />
+            <BookList bookList={data}/>
         </div>
     );
 }

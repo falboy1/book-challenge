@@ -1,23 +1,23 @@
 import React from "react";
 import BookCard from './BookCard';
-import SearchBook from "./SearchBook";
+import '../../assets/css/style.css';
 
-
-const BookList = ({keyword}) => {
+const BookList = (props) => {
 
     // keywordから本を検索
-    const bookList = SearchBook(keyword);
-    bookList.map(item => console.log(item.volumeInfo.title))
-    //console.log(bookList)
+    console.log(props)
+  
     return (
-        <div>
-            {bookList.map(book => 
-                <BookCard 
-                    imgSrc={book.volumeInfo.imageLinks.smallThumbnail}
-                    title={book.volumeInfo.title}
-                />
+        <ul className='common-list'>
+            {props.bookList && props.bookList.map(book =>
+                <li>
+                    <BookCard
+                        imgSrc={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail}
+                        title={book.volumeInfo.title}
+                    />
+                </li>
             )}
-        </div>
+        </ul>
     );
 };
 
