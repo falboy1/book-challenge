@@ -29,6 +29,11 @@
     text-align: right;
 }
 
+/* 左寄せ */
+.left {
+    text-align: left;
+}
+
 /* 横幅 */
 .w30 {
     width: 30%;
@@ -166,4 +171,8 @@
     background-color: gray;
     font-weight: bold; /*太字に*/
     font-size: 1em;/*サイズ2倍*/
+}
+
+.common-list {
+    list-style: none;
 }

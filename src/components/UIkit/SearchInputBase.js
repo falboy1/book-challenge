@@ -31,7 +31,9 @@ const SearchInputBase = (props) => {
       <Paper component="form" className={classes.root} style={{width: props.width}}>
         <InputBase
           className={classes.input}
+          value={props.value}
           placeholder={props.placeholder}
+          onChange={props.onChange}
           inputProps={{ 'aria-label': 'search google maps' }}
         />
         <IconButton type="submit" className={classes.iconButton} aria-label="search">
