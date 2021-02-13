@@ -31,6 +31,7 @@ const SearchBooks = () => {
     return (
         <div className="center">
             <div className="vertical-space-40"/>
+            <h2>本をさがす</h2>
             <TextBox 
                 label={"検索キーワード"}
                 value={keyword}
@@ -46,7 +47,7 @@ const SearchBooks = () => {
                 padding={'15px 10px'} 
                 onClick={() => setSearch(keyword)}
             />
-            
+            <div className="vertical-space-40"/>
             <BookList bookList={data}/>
         </div>
     );

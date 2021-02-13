@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {MainHeader} from './components/Header';
 import MainContent from './components/main-content';
-import {Home, SignIn, CreateClub, SignUp, MyPage, SearchPage, Reset, EditUser} from './templates';
+import {Home, SignIn, CreateClub, SignUp, MyPage, SearchPage, Reset, EditUser, SearchBooks} from './templates';
 import {Switch, Route} from 'react-router';
 import ClubPage from './templates/ClubPage';
 import { useDispatch, useSelector } from 'react-redux';
 import Auth from './Auth';
+import { Search } from '@material-ui/icons';
 
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
                     <Route exact path="/club/create" component={CreateClub} />
                     <Route exact path="/club/search" component={SearchPage} />
                     <Route exact path="/club/all" component={ClubPage} />
+                    
                 </Auth>
+                <Route exact path="/search" component={SearchBooks} />
             </div>
         </React.Fragment>
     );

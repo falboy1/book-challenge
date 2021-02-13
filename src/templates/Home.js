@@ -23,6 +23,7 @@ const Home = () => {
                     <PrimaryButton label={'さっそく使い始める'} width={'200px'} padding={'20px 10px'}/>
                 </Link>
             </div>
+            <Link to="/search">本を探す</Link>
             <Link to="/club/search">チャレンジを探す</Link>
             <Link to="/club/create">チャレンジを作る</Link>
             <Link to="/club/all">チャレンジ一覧</Link>
