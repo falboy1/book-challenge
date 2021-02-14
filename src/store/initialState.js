@@ -7,5 +7,11 @@ export const initialState = {
         icon: "",
         profile: "",
     },
+    currentReview: {
+        bookid: "",
+        bookTitle: "",
+        tags: [],
+        discription: "",
+    },
     test: [],
 };
