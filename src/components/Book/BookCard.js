@@ -3,7 +3,8 @@ import '../../assets/css/style.css';
 import { TextButton } from '../UIkit';
 import CreateIcon from '@material-ui/icons/Create';
 import { useDispatch } from 'react-redux';
-import { push } from 'connected-react-router'
+import { selectBook } from '../../reducks/currentReview/operation'
+
 
 const BookCard = props => {
     const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const BookCard = props => {
                 {props.publishDay && <p>props.publishDay</p>}
                 <TextButton 
                     label={'投稿'} startIcon={<CreateIcon/>}
-                    onClick={() => dispatch(push('/review/create'))}
+                    onClick={() => dispatch(selectBook('a', props.title, props.author))}
                 />
             </div>
         </div>

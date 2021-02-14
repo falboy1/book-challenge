@@ -1,10 +1,17 @@
 import React, { useCallback, useState } from 'react';
 import { PrimaryButton, TextBox, TextButton} from '../components/UIkit';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router'
+import { getAuthor, getBookTitle } from '../reducks/currentReview/selectors';
 
 const CreateReview = () => {
     const dispatch = useDispatch();
+
+    //選択された本情報の取得
+    const selector = useSelector((state) => state);
+    const bookid = getBookId(selector);
+    const bookTitle = getBookTitle(selector);
+    const author = getAuthor(selector);
     
     // Hook
     const [title, setTitle] = useState("");
@@ -42,6 +49,7 @@ const CreateReview = () => {
             />
             <TextBox 
                 label={"選択された本"}
+                value={bookTitle}
                 required={'required'}
                 disabled={'disable'}
                 width={'300px'}
