@@ -23,6 +23,7 @@ const TextButton = (props) => {
                 color="primary"
                 startIcon={props.startIcon}
                 endIcon={props.endIcon}
+                onClick={props.onClick}
                 style={{
                     width: props.width,
                     padding: props.padding,
