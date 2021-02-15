@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { PrimaryButton, TextBox, TextButton } from '../components/UIkit';
+import { PrimaryButton, TextBox, StarRating, TextButton } from '../components/UIkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router'
 import { getBookId, getAuthor, getBookTitle } from '../reducks/currentReview/selectors';
@@ -17,6 +17,7 @@ const CreateReview = () => {
     const [title, setTitle] = useState("");
     const [tags, setTags] = useState([]);
     const [discription, setDiscription] = useState("");
+    const [rating, setRating] = useState(3);
 
     // callback
     const inputTitle = useCallback((event) => {
@@ -31,7 +32,9 @@ const CreateReview = () => {
         setDiscription(event.target.value)
     }, [setDiscription]);
 
-
+    const inputRating = useCallback((event) => {
+        setRating(event.target.value)
+    }, [setRating]);
 
     return (
         <div className={'center'}>
@@ -39,6 +42,13 @@ const CreateReview = () => {
             <div className={'vertical-space-40'} />
 
             <h2>レビューの投稿</h2>
+
+            <StarRating 
+                size={'large'}
+                value={rating}
+                onChange={inputRating}
+            />
+
             <TextBox
                 label={"レビューのタイトル"}
                 value={title}
