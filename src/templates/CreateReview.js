@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { PrimaryButton, TextBox, StarRating, TextButton } from '../components/UIkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router'
-import { getBookId, getAuthor, getBookTitle } from '../reducks/currentReview/selectors';
+import { getBookId, getAuthor, getBookTitle, getImg } from '../reducks/currentReview/selectors';
 
 const CreateReview = () => {
     const dispatch = useDispatch();
@@ -12,6 +12,7 @@ const CreateReview = () => {
     const bookid = getBookId(selector);
     const bookTitle = getBookTitle(selector);
     const author = getAuthor(selector);
+    const img = getImg(selector);
 
     // Hook
     const [title, setTitle] = useState("");
@@ -43,6 +44,10 @@ const CreateReview = () => {
 
             <h2>レビューの投稿</h2>
 
+            {img && <img src={img}/>}
+
+            <h4>{bookTitle}</h4>
+
             <StarRating 
                 size={'large'}
                 value={rating}
@@ -52,18 +57,12 @@ const CreateReview = () => {
             <TextBox
                 label={"レビューのタイトル"}
                 value={title}
-                placeholder={"例：ビジネス書を読もう！"}
+                placeholder={"この本をひとことで言うと"}
                 required={'required'}
                 onChange={inputTitle}
                 width={'300px'}
             />
-            <TextBox
-                label={"選択された本"}
-                value={bookTitle}
-                required={'required'}
-                disabled={'disable'}
-                width={'300px'}
-            />
+
             <TextBox
                 label={"タグ"}
                 value={tags}
@@ -73,7 +72,7 @@ const CreateReview = () => {
             <TextBox
                 label={"説明"}
                 value={discription}
-                placeholder={'例：誰でも参加歓迎です！'}
+                placeholder={'例：初心者でもわかりやすい本でした'}
                 multiline={true}
                 rows={4}
                 onChange={inputDiscription}

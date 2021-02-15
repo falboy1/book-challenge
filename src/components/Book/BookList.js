@@ -3,8 +3,6 @@ import BookCard from './BookCard';
 import '../../assets/css/style.css';
 
 const BookList = (props) => {
-
-    console.log(props)
   
     return (
         <ul className='common-list'>

@@ -32,6 +32,7 @@ export const selectBookAction = (userState) => {
             bookid: userState.bookid,
             bookTitle: userState.bookTitle,
             author: userState.author,
+            img: userState.img
         }
     }
 }

@@ -8,7 +8,7 @@ import { selectBook } from '../../reducks/currentReview/operation'
 
 const BookCard = props => {
     const dispatch = useDispatch();
-    
+
     return(
         <div className="flex">
             <div>
@@ -20,7 +20,7 @@ const BookCard = props => {
                 {props.publishDay && <p>props.publishDay</p>}
                 <TextButton 
                     label={'投稿'} startIcon={<CreateIcon/>}
-                    onClick={() => dispatch(selectBook(props.id, props.title, props.author))}
+                    onClick={() => dispatch(selectBook(props))}
                 />
             </div>
         </div>

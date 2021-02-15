@@ -1,13 +1,14 @@
 import {selectBookAction} from './actions';
 import {push, goBack} from 'connected-react-router';
 
-export const selectBook = (bookid, bookTitle, author) => {
+export const selectBook = (state) => {
     return (dispatch) => {
-      
+        console.log(state)
         dispatch(selectBookAction({
-            bookid: bookid,
-            bookTitle: bookTitle,
-            author: author
+            bookid: state.id,
+            bookTitle: state.title,
+            author: state.author,
+            img: state.imgSrc
         }));
         dispatch(push('/review/create'));
     }

@@ -10,6 +10,8 @@ export const initialState = {
     currentReview: {
         bookid: [],
         bookTitle: "",
+        author: "",
+        img: "",
         tags: [],
         discription: "",
     },

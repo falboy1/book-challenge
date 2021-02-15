@@ -16,3 +16,8 @@ export const getAuthor = createSelector(
     [currentReviewSelector],
     state => state.author
 )
+
+export const getImg = createSelector(
+    [currentReviewSelector],
+    state => state.img
+)
