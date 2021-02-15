@@ -8,7 +8,7 @@ export const initialState = {
         profile: "",
     },
     currentReview: {
-        bookid: "",
+        bookid: [],
         bookTitle: "",
         tags: [],
         discription: "",
