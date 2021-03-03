@@ -4,15 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router'
 import { getBookId, getAuthor, getBookTitle, getImg } from '../reducks/currentReview/selectors';
 
-const CreateReview = () => {
+const CreateReview = (props) => {
     const dispatch = useDispatch();
 
     //選択された本情報の取得
     const selector = useSelector((state) => state);
-    const bookid = getBookId(selector);
-    const bookTitle = getBookTitle(selector);
-    const author = getAuthor(selector);
-    const img = getImg(selector);
+    const bookid = props.location.state.id;
+    const bookTitle = props.location.state.title;
+    const author = props.location.state.author;
+    const img = props.location.state.imgSrc;
 
     // Hook
     const [title, setTitle] = useState("");
@@ -36,6 +36,7 @@ const CreateReview = () => {
     const inputRating = useCallback((event) => {
         setRating(event.target.value)
     }, [setRating]);
+
 
     return (
         <div className={'center'}>
