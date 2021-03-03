@@ -2,6 +2,8 @@ import React, { useCallback, useState } from 'react';
 import { PrimaryButton, TextBox, StarRating, TextButton } from '../components/UIkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router'
+import { saveReview} from '../reducks/reviews/operation'
+import { getUserId } from '../reducks/users/selectors';
 
 const CreateReview = (props) => {
     const dispatch = useDispatch();
@@ -12,16 +14,20 @@ const CreateReview = (props) => {
     const author = props.location.state.author;
     const img = props.location.state.imgSrc;
 
+    // selector
+    const selector = useSelector((state) => state);
+    const uid = getUserId(selector)
+
     // Hook
-    const [title, setTitle] = useState("");
+    const [reviewTitle, setReviewTitle] = useState("");
     const [tags, setTags] = useState([]);
     const [discription, setDiscription] = useState("");
     const [rating, setRating] = useState(3);
 
     // callback
-    const inputTitle = useCallback((event) => {
-        setTitle(event.target.value)
-    }, [setTitle]);
+    const inputReviewTitle = useCallback((event) => {
+        setReviewTitle(event.target.value)
+    }, [setReviewTitle]);
 
     const inputTags = useCallback((event) => {
         setTags((prevState => [...prevState, event.target.value]))
@@ -55,10 +61,10 @@ const CreateReview = (props) => {
 
             <TextBox
                 label={"レビューのタイトル"}
-                value={title}
+                value={reviewTitle}
                 placeholder={"この本をひとことで言うと"}
                 required={'required'}
-                onChange={inputTitle}
+                onChange={inputReviewTitle}
                 width={'300px'}
             />
 
@@ -79,7 +85,7 @@ const CreateReview = (props) => {
             <div className={'vertical-space-20'} />
             <PrimaryButton
                 label={"投稿する"} width={'300px'} padding={'15px 10px'}
-                onClick={() => dispatch(push('/review/create'))}
+                onClick={() => dispatch(saveReview(bookid, reviewTitle, tags, discription, uid, rating))}
             />
         </div>
     );
