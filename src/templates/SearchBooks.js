@@ -17,14 +17,16 @@ const SearchBooks = () => {
     }, [setKeyword]);
 
     useEffect(() => {
-        const fetchData = async () => {
-        const result = await axios(
-            `https://www.googleapis.com/books/v1/volumes?q=${search}`
-        );
-            setData(result.data.items);
-        };
-        
-        fetchData();
+        if (search != ""){
+            const fetchData = async () => {
+                const result = await axios(
+                    `https://www.googleapis.com/books/v1/volumes?q=${search}`
+                );
+                    setData(result.data.items);
+                };
+                
+                fetchData();
+        }
     }, [search]);
         
 

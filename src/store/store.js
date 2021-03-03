@@ -9,6 +9,7 @@ import {routerMiddleware, connectRouter} from 'connected-react-router';
 
 // Reducers
 import {UsersReducer} from '../reducks/users/reducers'
+import {ReviewsReducer} from '../reducks/reviews/reducers'
 
 // reduxをcreateStoreを用いてcreateStoreの再定義
 export default function createStore(history){
@@ -26,6 +27,7 @@ export default function createStore(history){
         combineReducers(
             {
                 users: UsersReducer,
+                reviews: ReviewsReducer,
                 router: connectRouter(history),
             }
         ),

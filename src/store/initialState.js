@@ -7,5 +7,8 @@ export const initialState = {
         icon: "",
         profile: "",
     },
+    reviews: {
+        list: []
+    },
     test: [],
 };

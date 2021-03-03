@@ -3,7 +3,7 @@ import SearchBook from './SearchBooks';
 export {default as SignIn} from './SignIn';
 export {default as Home} from './Home';
 export {default as MyPage} from './UserPage';
-export {default as CreateClub} from './CreateClub';
+export {default as CreateReview} from './CreateReview';
 export {default as SearchPage} from './SearchPage';
 export {default as SignUp} from './SignUp';
 export {default as Reset} from './Reset';
