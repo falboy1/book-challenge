@@ -2,13 +2,11 @@ import React, { useCallback, useState } from 'react';
 import { PrimaryButton, TextBox, StarRating, TextButton } from '../components/UIkit';
 import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router'
-import { getBookId, getAuthor, getBookTitle, getImg } from '../reducks/currentReview/selectors';
 
 const CreateReview = (props) => {
     const dispatch = useDispatch();
 
     //選択された本情報の取得
-    const selector = useSelector((state) => state);
     const bookid = props.location.state.id;
     const bookTitle = props.location.state.title;
     const author = props.location.state.author;

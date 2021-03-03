@@ -7,13 +7,8 @@ export const initialState = {
         icon: "",
         profile: "",
     },
-    currentReview: {
-        bookid: [],
-        bookTitle: "",
-        author: "",
-        img: "",
-        tags: [],
-        discription: "",
+    reviews: {
+        list: []
     },
     test: [],
 };

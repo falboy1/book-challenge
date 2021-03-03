@@ -24,16 +24,3 @@ export const editAction = (userState) => {
     }
 }
 
-export const SELECT_BOOK = 'SELECT_BOOK';
-export const selectBookAction = (userState) => {
-    return {
-        type: 'SELECT_BOOK',
-        payload: {
-            bookid: userState.bookid,
-            bookTitle: userState.bookTitle,
-            author: userState.author,
-            img: userState.img
-        }
-    }
-}
-
